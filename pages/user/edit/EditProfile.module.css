@@ -1,0 +1,161 @@
+.edit_profile {
+    width: 100%;
+    min-height: 100vh;
+    background: rgba(246, 246, 246, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back {
+    width: 100%;
+    color: #7E98DF;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.back span {
+    cursor: pointer;
+}
+
+.edit_ava {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.edit_ava label {
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    background: #7E98DF;
+    cursor: pointer;
+    text-align: center;
+    line-height: 30px;
+}
+
+.edit_ava button {
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    background: #7E98DF;
+    cursor: pointer;
+    text-align: center;
+    line-height: 30px;
+}
+
+.edit_container {
+    width: 700px;
+    height: fit-content;
+    background: #FFF;
+    border-radius: 20px;
+    padding: 35px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edit_container .name {
+    margin: 0;
+    margin-top: 10px;
+}
+
+.edit_container .email {
+    margin: 0;
+    color: #7E98DF;
+    margin-top: 5px;
+}
+
+.input_forms {
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+}
+
+.input {
+    display: flex;
+    gap: 10px;
+    width: 250px;
+    flex-direction: column;
+}
+
+.input label {
+    font-weight: 600;
+    color: #848484;
+}
+
+.input input {
+    border: none;
+    border-bottom: 3px solid #848484;
+    padding-bottom: 10px;
+    background: none;
+}
+
+.input input:focus {
+    outline: none;
+}
+
+.update_btn {
+    margin-top: 40px;
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background: #7E98DF;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.edit_container button:hover {
+    background: #2675EC;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .edit_container {
+        flex-direction: column;
+    }
+
+    .back {
+        font-size: 24px;
+    }
+
+    .edit_container {
+        width: 95%;
+        padding: 20px 30px;
+        margin: 0px auto;
+    }
+
+    .edit_container .user_ava {
+        width: 80px !important;
+        height: 80px !important;
+    }
+
+    .input_forms {
+        gap: 30px;
+    }
+
+    .input {
+        width: 90%;
+    }
+
+}

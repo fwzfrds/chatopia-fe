@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './SignIn.module.css'
 import Input from '../../../../components/base/input/input'
 import Button from '../../../../components/base/button/button'
@@ -39,13 +39,19 @@ const SignIn = () => {
         }
     }, [])
 
+    useEffect(() => {
+        if(router.query.activation === 'active') {
+            notify('Congrats, your account has been activated!')
+        }
+    }, [router.query])
+
     const handleInputLogin = (e) => {
         e.persist()
         setLoginData({ ...loginData, [e.target.name]: e.target.value })
     }
 
-    const notify = () => {
-        toast.success('Login Success!', {
+    const notify = (message) => {
+        toast.success(message, {
             position: "top-right",
             autoClose: 3000,
             hideProgressBar: false,
@@ -61,6 +67,8 @@ const SignIn = () => {
         setFormErrors(validate(loginData))
         setIsSubmit(true)
     }
+
+    console.log(router.query.redirect)
 
     useEffect(() => {
 
@@ -85,8 +93,12 @@ const SignIn = () => {
                     localStorage.setItem('ChatopiaUser', JSON.stringify(dataLocal))
 
                     setButtonDisable(false)
-                    notify()
-                    router.push('/')
+                    notify('Login Success')
+                    if(router.query.redirect === 'true') {
+                        router.back()
+                    } else {
+                        router.push('/chat')
+                    }
 
                 } catch (error) {
                     console.log(error)
