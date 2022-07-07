@@ -260,9 +260,9 @@ const EditProfile = () => {
                                     type="text"
                                     id='phone'
                                     name='phone'
-                                    defaultValue={userData.phone ? userData.phone : 'Add phone number'}
+                                    defaultValue={userData.phone ? userData.phone : ''}
                                     onChange={handleInput}
-
+                                    placeholder={'insert your phone number'}
                                 />
                             </div>
                         </form>
