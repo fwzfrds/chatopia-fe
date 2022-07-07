@@ -174,7 +174,7 @@ const EditProfile = () => {
                 >
                     <div className={`${styles.edit_container}`}>
                         <div className={`${styles.back}`}>
-                            <span>{'<'}</span>
+                            <span onClick={() => router.push('/chat')} >{'<'}</span>
                         </div>
                         <UserAva
                             source={previewPhoto ? previewPhoto : '/assets/img/dummy-img.jpg'}
@@ -229,7 +229,7 @@ const EditProfile = () => {
                                     type="text"
                                     id='id'
                                     name='id'
-                                    defaultValue={userData.id ? userData.id : 'Loading...'}
+                                    defaultValue={userData.id ? userData.id : ''}
                                     disabled
                                 />
                             </div>
@@ -239,7 +239,7 @@ const EditProfile = () => {
                                     type="text"
                                     id='name'
                                     name='name'
-                                    defaultValue={userData.name ? userData.name : 'Loading...'}
+                                    defaultValue={userData.name ? userData.name : ''}
                                     onChange={handleInput}
                                 />
                             </div>
@@ -249,7 +249,7 @@ const EditProfile = () => {
                                     type="text"
                                     id='email'
                                     name='email'
-                                    defaultValue={userData.email ? userData.email : 'Loading...'}
+                                    defaultValue={userData.email ? userData.email : ''}
                                     onChange={handleInput}
 
                                 />

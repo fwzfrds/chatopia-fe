@@ -2,16 +2,16 @@ import React, { useEffect, useState, useContext } from 'react'
 import UserAva from '../../base/userAva/Image'
 import styles from './ChatList.module.css'
 import Input from '../../base/input/input'
-import { chatContext } from '../../../pages/chat/chat'
+import { chatContext } from '../../../pages/chat'
 import axios from 'axios'
+import { useRouter } from 'next/router'
 
 const ChatList = ({ userData }) => {
 
+    const router = useRouter()
     const [chatMenuActive, setChatMenuActive] = useState('important')
-    const { isChatActive, handleChatActive, authToken } = useContext(chatContext)
+    const { isChatActive, handleChatActive, authToken, handleLogout } = useContext(chatContext)
     const [friendList, setFriendList] = useState('')
-
-    const receiver = 'muhammadfawwaz463@gmail.com'
 
     useEffect(() => {
         const fetchFriends = async () => {
@@ -32,15 +32,6 @@ const ChatList = ({ userData }) => {
         fetchFriends()
     }, [authToken])
 
-    // useEffect(() => {
-    //     if (userData) {
-    //         console.log(userData)
-    //         console.log(isChatActive)
-    //     }
-    // }, [userData])
-
-    // console.log(friendList)
-
     return (
         <div className={`${styles.chat_nav}`}>
             {/* <h3>Chat list</h3> */}
@@ -53,8 +44,10 @@ const ChatList = ({ userData }) => {
                         position: 'relative'
                     }}
                 />
-                <h4>{userData.name ? userData.name : 'Loading...'}</h4>
-                <svg width="22" height="19" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <h4 onClick={() => router.push('/user/edit')}>{userData.name ? userData.name : 'Loading...'}</h4>
+                <svg width="22" height="19" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    onClick={handleLogout}
+                >
                     <rect width="22" height="3.3" rx="1.65" fill="#7E98DF" />
                     <rect y="7.69995" width="13.2" height="3.3" rx="1.65" fill="#7E98DF" />
                     <rect y="15.4" width="22" height="3.3" rx="1.65" fill="#7E98DF" />

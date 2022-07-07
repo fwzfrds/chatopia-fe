@@ -91,9 +91,21 @@
     height: 100%;
     margin: 0;
     /* padding: 0; */
-    padding: 30px 50px;
+    /* padding: 30px 50px; */
     list-style-type: none;
+    /* overflow: auto; */
+}
+
+.chats ul .scroll_bottom {
+    width: 100%;
+    height: 100%;
     overflow: auto;
+    /* padding: 30px 50px; */
+
+}
+
+.chats ul .scroll_bottom div {
+    padding: 30px 50px;
 }
 
 .chats ul li {
@@ -119,7 +131,7 @@
     margin-left: auto;
     border-radius: 0px 20px 0 20px;
     background: #7E98DF;
-
+    position: relative;
 }
 
 .chats ul li div.others {
@@ -127,19 +139,41 @@
     border-radius: 0px 20px 0 20px;
     background: #FFF;
     color: black;
+    position: relative;
 }
 
 .chats ul li p {
     margin: 0;
 }
 
-.chats ul li p:last-child {
+.chats ul li p:nth-child(2) {
     font-size: 12px;
     color: #f0f0f0;
 }
 
-.chats ul li .others p:last-child {
+.chats ul li .others p:nth-child(2) {
     color: black;
+}
+
+.chat_actions {
+    position: absolute;
+    padding: 0px !important;
+    top: 0px;
+    left: 0px;
+    height: fit-content;
+}
+
+.chat_actions h6 {
+    margin-left: 10px;
+    margin-top: 3px;
+    margin-bottom: 0px;
+    width: 5px;
+    height:fit-content;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 8px;
+    overflow-wrap: break-word;
+    /* background: red; */
 }
 
 .chat_typer {
