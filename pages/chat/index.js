@@ -105,7 +105,7 @@ const ChatPage = () => {
   const connectSocket = () => {
     const { name, email } = userData
 
-    const resultSocket = io.connect('http://localhost:4000', {
+    const resultSocket = io.connect(`${process.env.NEXT_PUBLIC_API_URL}`, {
       query: {
         name,
         email

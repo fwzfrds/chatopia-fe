@@ -33,3 +33,5 @@ yarn-error.log*
 
 note.txt
 .env
+
+.vercel

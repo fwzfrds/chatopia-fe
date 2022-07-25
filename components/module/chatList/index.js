@@ -22,7 +22,7 @@ const ChatList = ({ userData }) => {
                             Authorization: `Bearer ${authToken}`
                         }
                     })
-                    // console.log(result.data.data)
+                    console.log(result.data.data)
                     setFriendList(result.data.data)
                 } catch (error) {
                     console.log(error)
@@ -31,6 +31,10 @@ const ChatList = ({ userData }) => {
         }
         fetchFriends()
     }, [authToken])
+
+    const handleNavigate = () => {
+        router.push('/')
+    }
 
     return (
         <div className={`${styles.chat_nav}`}>
@@ -115,7 +119,7 @@ const ChatList = ({ userData }) => {
 
 
                 </div>
-                <p className={`${styles.copyright}`}>&copy; <span>Chatopia 2022. all right reserved</span></p>
+                <p className={`${styles.copyright}`}>&copy; <span onClick={handleNavigate} style={{ cursor: 'pointer' }}>Chatopia 2022. all right reserved</span></p>
             </div>
         </div>
     )
