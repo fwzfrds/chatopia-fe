@@ -101,9 +101,15 @@ Contributions are what make the open source community such an amazing place to b
 | ------------- | ------------- |
 | ![Landing](/public/assets/img/screenshot/home.png?raw=true "Landing Page") | ![Chat](/public/assets/img/screenshot/chat.png?raw=true "Chat Page") |
 
-| Profile Page |
+| Profile Page | Delete Chat | 
+| ------------- | ------------- |
+| ![Profile](/public/assets/img/screenshot/profile.png?raw=true "Profile Page") | ![Delete](/public/assets/img/screenshot/delete-chat.png?raw=true "Delete Chat") |
+
+| Logout |
 | ------------- |
-| ![Profile](/public/assets/img/screenshot/profile.png?raw=true "Profile Page")
+| ![Logout](/public/assets/img/screenshot/logout.png?raw=true "Profile Page")
+
+
 
 
 <!-- RELATED PROJECT -->
