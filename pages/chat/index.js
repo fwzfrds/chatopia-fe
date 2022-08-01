@@ -126,8 +126,8 @@ const ChatPage = () => {
 
   const removeNode = (msgIdx) => {
     const thisEl = document.getElementById(`id_${msgIdx}`)
-    
-    if(thisEl) {
+
+    if (thisEl) {
       document.getElementById(`id_${msgIdx}`).remove()
     }
   }
@@ -180,13 +180,32 @@ const ChatPage = () => {
   }
 
   const handleLogout = () => {
-    localStorage.removeItem('ChatopiaUser')
-    setAuthToken('')
-    router.push('/auth/user/signin')
+    // localStorage.removeItem('ChatopiaUser')
+    // setAuthToken('')
+    // router.push('/auth/user/signin')
+    // swal({
+    //   title: "Logout",
+    //   text: `Logout Success`,
+    //   icon: "success",
+    // })
+
     swal({
       title: "Logout",
-      text: `Logout Success`,
-      icon: "success",
+      text: `Are you sure want to logout?`,
+      icon: "warning",
+      buttons: true,
+      dangerMode: true
+    }).then(async (isOkay) => {
+      if (isOkay) {
+        localStorage.removeItem('ChatopiaUser')
+        setAuthToken('')
+        router.push('/auth/user/signin')
+        swal({
+          title: "Logout",
+          text: `Logout Success`,
+          icon: "success",
+        })
+      }
     })
   }
 
@@ -281,7 +300,7 @@ const ChatPage = () => {
                         <ScrollToBottom className={`${styles.scroll_bottom}`}>
                           {messages ? messages.map((message, idx) => (
                             <li key={idx} id={`id_${idx}`}>
-                              <div className={message.id_sender === userData.email 
+                              <div className={message.id_sender === userData.email
                                 ? `${styles.yours}` : `${styles.others}`}>
                                 <p>{message.message}</p>
                                 <p>{new Date(message.created_at).getHours()}:{new Date(message.created_at).getMinutes()}</p>
