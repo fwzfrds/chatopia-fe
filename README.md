@@ -35,7 +35,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Chatopia is a realtime web application which provides chat feature. This application built with Node JS, PostgreSQL database, Express JS, Next JS as frontend framework, Nodemailer as as module for sending email, & Cloudinary as cloud services for uploading images.
+Chatopia is a realtime web application which provides chat feature. This application built with Node JS, PostgreSQL database, Express JS, Next JS as frontend framework, Nodemailer as module for sending email, & Cloudinary as cloud services for uploading images.
 This Application use Rest API server from [chatopia-api](https://chatopia-api.herokuapp.com)
 
 ### Built With
